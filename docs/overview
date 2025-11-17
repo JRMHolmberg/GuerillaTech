@@ -25,3 +25,96 @@ SYSTEM-ALFA
               │   └─ processer, actioncards
               ├─ NODE-B
               └─ NODE-C
+
+ROOT-OWNER – systemarkitekt / ansvarig på rot-nivå
+
+NODE-A/B/C – generella noder (serviceområden)
+
+Varje nod har:
+
+node-ägare
+
+processer
+
+ActionCards kopplade till funktionella kluster
+
+2. Processer
+
+En process i SYSTEM-ALFA:
+
+har alltid en ProcessPlan:
+
+syfte
+
+mål
+
+delmål (checkpoints)
+
+processägare
+
+deltagare
+
+styrdokument
+
+får inte startas förrän planen är:
+
+komplett
+
+validerad
+
+följer en enkel livscykel:
+
+NOT_STARTED → UNDER_WORK → PENDING_DECISION → APPROVED → DRIFT
+
+
+Vid start:
+
+status ändras NOT_STARTED → UNDER_WORK
+
+närmaste överordnad chef notifieras
+
+ROOT-COCKPIT ser statistik över aktiva processer per nod
+
+Vid slutförande:
+
+delmål (checkpoints) klarmarkeras
+
+mätpunkter genereras automatiskt
+
+koherens och trend kan beräknas anonymt
+
+processen måste kopplas till minst ett ActionCard innan DRIFT
+
+3. ActionCards
+
+ActionCards är operativa kort för vardagen:
+
+en automatiserad eller halvautomatiserad rutin
+
+beslutsstöd (t.ex. triage: enkel / medel / hög komplexitet)
+
+tydliga checklistor
+
+länkade styrdokument
+
+kopplade processer (”hur vi kom hit”)
+
+feedback-kanal för förbättringsförslag
+
+När en process blir APPROVED:
+
+den måste länka till ett eller flera ActionCards
+
+ActionCards används sedan av chefer/medarbetare i vardagen
+
+Feedback på ActionCards:
+
+samlas in
+
+kan leda till mindre justeringar direkt
+
+eller initiera nya förbättringsprocesser
+
+4. Funktioner & kluster
+
+För att säkerställa ansvar samlas ActionCards i kluster under definierade funktioner.
