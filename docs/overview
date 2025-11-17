@@ -1,0 +1,27 @@
+# Overview – SYSTEM-ALFA (Anonymiserad modell)
+
+Den här dokumentationen beskriver ett anonymiserat, expanderbart system för processer, beslut och lärande kallat **SYSTEM-ALFA**.
+
+Systemet bygger på:
+
+- **ROOT / ROT** – övergripande ägare och cockpit
+- **Noder** – organisationsdelar (t.ex. enheter, team)
+- **Processer** – förbättrings- och designarbete
+- **ActionCards** – operativt beslutsstöd i vardagen
+- **Funktioner & kluster** – ansvar för innehåll och uppdatering
+
+Allt är anonymiserat: inga verkliga verksamhetsnamn, inga persondata. Problemen är dock högst äkta och hämtade rakt från verkligheten
+
+---
+
+## 1. Struktur
+
+```text
+SYSTEM-ALFA
+  └─ ROOT-OWNER
+      └─ ROOT-COCKPIT
+          └─ NODE-ROOT
+              ├─ NODE-A
+              │   └─ processer, actioncards
+              ├─ NODE-B
+              └─ NODE-C
