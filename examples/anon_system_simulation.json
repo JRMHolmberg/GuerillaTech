@@ -1,0 +1,53 @@
+{
+  "system_id": "SYSTEM-ALFA",
+  "root_user": "ROOT-OWNER",
+  "nodes": [
+    {
+      "id": "NODE-A",
+      "name": "Service Area A",
+      "owner": "NODE-OWNER-A",
+      "processes": [
+        {
+          "id": "PROCESS-01",
+          "name": "Standardized Assessment",
+          "owner": "PROCESS-OWNER-A1",
+          "supervisor": "LEVEL-1-MANAGER-A",
+          "status_timeline": [
+            {
+              "t": "T0",
+              "status": "NOT_STARTED"
+            },
+            {
+              "t": "T1",
+              "status": "UNDER_WORK",
+              "event": "PROCESS_STARTED"
+            },
+            {
+              "t": "T2",
+              "status": "PENDING_DECISION",
+              "coherence_score": 0.78,
+              "zone": "YELLOW"
+            },
+            {
+              "t": "T3",
+              "status": "NEEDS_CORRECTION",
+              "feedback_id": "FB-001"
+            },
+            {
+              "t": "T4",
+              "status": "PENDING_DECISION",
+              "coherence_score": 0.85,
+              "zone": "GREEN"
+            },
+            {
+              "t": "T5",
+              "status": "APPROVED",
+              "phase": "DRIFT",
+              "actioncard_ids": ["AC-PERSONNEL-01"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
