@@ -118,3 +118,125 @@ eller initiera nya förbättringsprocesser
 4. Funktioner & kluster
 
 För att säkerställa ansvar samlas ActionCards i kluster under definierade funktioner.
+
+Se docs/actioncards_overview.md för detaljer.
+
+
+---
+
+## 5. docs/design_principles.md
+
+**Fil:** `docs/design_principles.md`
+
+```markdown
+# Design Principles
+
+Det här dokumentet sammanfattar kärnprinciperna i Guerilla Tech Lab / SYSTEM-ALFA.
+
+## 1. ProcessPlan är obligatorisk
+
+Ingen process får startas utan en komplett och validerad plan.
+
+Minimikrav:
+
+- syfte (purpose)
+- mål (goals)
+- delmål / checkpoints (checkpoint_ids)
+- processägare (owner_id)
+- deltagare (participants)
+- styrdokument (documents)
+- `validated = true`
+
+Systemregler:
+
+- status får inte växla `NOT_STARTED → UNDER_WORK` om planen är ofullständig eller ej validerad.
+
+---
+
+## 2. Processstart → notifiering till chef
+
+När en process startas första gången:
+
+- status: `NOT_STARTED → UNDER_WORK`
+- event: `PROCESS_STARTED` skapas
+- närmaste överordnad chef får:
+  - nod
+  - process
+  - ägare
+  - status
+
+ROOT-COCKPIT kan aggregera:
+
+- antal aktiva processer per nod
+- nya starter över tid
+
+---
+
+## 3. Delmål (checkpoints) kräver automatiska mätpunkter
+
+När ett delmål klarmarkeras:
+
+- status: `IN_PROGRESS → DONE`
+- systemet genererar automatiskt mätpunkter, t.ex.:
+
+  - tid till completion
+  - antal feedback-cykler
+  - rework-flagga (om korrigering krävts)
+  - koherens före / efter
+
+Designlag:
+
+> Ett delmål får inte vara "DONE" utan associerade mätpunkter.
+
+---
+
+## 4. Beslut och klarmarkering
+
+Innan en process kan skickas för beslut (`PENDING_DECISION`):
+
+- systemet kontrollerar:
+  - koherens över en viss tröskel
+  - kritiska punkter i styrkort uppfyllda
+
+Chef (beslutsnivå) får:
+
+- lista över processer i `PENDING_DECISION`
+- koherensscore + zon
+- styrkortsstatus
+- historik / feedback
+
+Val:
+
+- godkänn (APPROVED → DRIFT)
+- kräv korrigering (NEEDS_CORRECTION + feedback)
+
+---
+
+## 5. ActionCards krävs för slutförda processer
+
+När en process är APPROVED:
+
+- den måste vara kopplad till minst ett ActionCard
+- annars blockeras övergång till DRIFT
+
+Syftet:
+
+- göra resultatet av processen användbart i vardagen
+- ge chefer/medarbetare beslutsstöd
+- skapa kanal för nya förbättringar
+
+---
+
+## 6. ActionCards i kluster under funktioner
+
+- varje ActionCard tillhör minst ett kluster
+- varje kluster tillhör en funktion
+- varje funktion har en definierad ägare
+
+Funktionens ansvar:
+
+- hålla ActionCards aktuella
+- hantera feedback
+- initiera nya processer vid större förändringsbehov
+
+Se `docs/actioncards_overview.md` för detaljer.
