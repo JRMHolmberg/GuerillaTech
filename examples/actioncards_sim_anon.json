@@ -1,0 +1,87 @@
+{
+  "functions": [
+    {
+      "id": "FUNC-HR",
+      "name": "Human Resources",
+      "owner_id": "FUNCTION-OWNER-HR",
+      "cluster_ids": ["CLUSTER-PERSONNEL"]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "CLUSTER-PERSONNEL",
+      "name": "Personnel cases",
+      "function_id": "FUNC-HR",
+      "description": "ActionCards related to personnel-related cases and manager support.",
+      "actioncard_ids": ["AC-PERSONNEL-01"],
+      "review_policy": {
+        "frequency": "6 months",
+        "owner": "FUNCTION-OWNER-HR",
+        "triggers": ["high_feedback_volume", "repeated_escalations", "process_changes"]
+      }
+    }
+  ],
+  "actioncards": [
+    {
+      "id": "AC-PERSONNEL-01",
+      "name": "Personnel case – conduct/performance",
+      "scope": "Manager support for handling personnel-related cases.",
+      "process_ids": ["PROCESS-01"],
+      "owner_id": "FUNCTION-OWNER-HR",
+      "cluster_ids": ["CLUSTER-PERSONNEL"],
+      "decision_paths": [
+        {
+          "id": "PATH-SIMPLE",
+          "name": "Simple case",
+          "criteria": { "severity": "low", "repetition": false },
+          "actions": [
+            "Talk to employee",
+            "Document conversation",
+            "Follow checklist"
+          ],
+          "escalation_to": null
+        },
+        {
+          "id": "PATH-MEDIUM",
+          "name": "Medium complexity",
+          "criteria": { "severity": "medium", "repetition": true },
+          "actions": [
+            "Talk to employee",
+            "Inform HR contact",
+            "Plan follow-up"
+          ],
+          "escalation_to": "HR"
+        },
+        {
+          "id": "PATH-HIGH",
+          "name": "High risk",
+          "criteria": { "severity": "high" },
+          "actions": [
+            "Secure safety",
+            "Contact HR immediately",
+            "Document incident in system"
+          ],
+          "escalation_to": "HR"
+        }
+      ],
+      "checklist_items": [
+        "Clarify facts",
+        "Describe observed behaviour",
+        "Describe impact on work",
+        "Agree on next steps",
+        "Document in system"
+      ],
+      "documents": [
+        {
+          "id": "DOC-001",
+          "title": "Guideline – Personnel cases",
+          "doc_type": "GUIDELINE",
+          "uri": "internal://guidelines/personnel-cases",
+          "mandatory": true
+        }
+      ],
+      "feedback_channel": "internal://feedback/actioncards/personnel",
+      "metadata": {}
+    }
+  ]
+}
