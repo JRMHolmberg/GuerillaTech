@@ -1,0 +1,63 @@
+# ActionCards – Operational Layer
+
+ActionCards är det operativa lagret i SYSTEM-ALFA – där beslut, rutiner och erfarenheter blir användbara i vardagen.
+
+## 1. Vad är ett ActionCard?
+
+Ett ActionCard är:
+
+- en strukturerad rutin för ett återkommande ärende
+- beslutsstöd (enkelt → eskalerat)
+- en samling av kollektiv erfarenhet
+- en länkpunkt till relevanta styrdokument
+- en ingång för förbättringsförslag
+
+Minimikrav:
+
+- ID & namn
+- scope / typ av ärende
+- decision paths (t.ex. simple / medium / high risk)
+- checklistor
+- dokumentreferenser
+- kopplade processer
+- feedback-kanal
+- cluster_ids (tillhör kluster)
+- owner_id (funktionell ägare)
+
+---
+
+## 2. Funktioner & kluster
+
+För att säkerställa kvalitet samlas ActionCards i kluster under funktioner.
+
+### OrgFunction
+
+En funktion representerar en organisatorisk del, t.ex.:
+
+- FUNC-HR – Human Resources
+- FUNC-QUALITY – Quality & Safety
+
+Varje funktion har:
+
+- id
+- name
+- owner_id (funktionellt ansvarig)
+- lista över kluster
+
+### ActionCardCluster
+
+Ett kluster samlar ActionCards inom ett område.
+
+- id
+- name
+- function_id
+- actioncard_ids[]
+- review_policy (t.ex. var 6:e månad, triggers)
+
+**Exempel (anonymt):**
+
+```text
+FUNC-HR
+  └─ CLUSTER-PERSONNEL
+      ├─ AC-PERSONNEL-01
+      └─ AC-PERSONNEL-02
