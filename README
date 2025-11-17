@@ -1,0 +1,46 @@
+# Guerilla Tech Lab
+
+Guerilla Tech Lab är ett öppet, anonymiserat experimentfält för att bygga små, etiska och extremt pragmatiska verktyg för processtyrning, beslutsstöd och lärande.
+
+Fokus:
+
+- Minsta möjliga verktyg
+- Högsta möjliga nytta
+- Låg friktion för människor i systemet
+- Tydlig ansvarsfördelning (processer → actioncards → funktioner)
+
+Labbet är designat enligt en fyrnivå-arkitektur:
+
+1. **Heart** – syfte, värde, intention
+2. **Mind** – modeller, logik, semantik
+3. **Body** – verktyg, kod, Excel, UI
+4. **Reality** – faktiska beteenden, beslut, effekter
+
+Det här repot innehåller:
+
+- generella modeller för processer, noder, checkpoints och ActionCards
+- designprinciper för koherens, ansvar och feedback-loopar
+- exempel på anonymiserade system (SYSTEM-ALFA)
+- grundläggande Python-modeller som kan användas i egna projekt
+
+Det innehåller *inte*:
+
+- specifika verksamhetsnamn
+- persondata eller kliniska data
+- någon enskild bakomliggande teori/ekvation – det finns bara som privat implementation bakom ett interface
+
+## Kom igång
+
+1. Klona eller ladda ned repot.
+2. Läs `docs/overview.md` för helhetsbilden.
+3. Titta på `examples/anon_system_simulation.json` och `examples/actioncards_sim_anon.json`.
+4. Anpassa modellerna till din egen miljö.
+
+## Hur du kan bidra
+
+- Lägg till nya exempel (anonymiserade)
+- Förbättra datamodeller i `src/python`
+- Föreslå fler designprinciper i `docs/design_principles.md`
+- Skapa fler ActionCard-kluster i `examples/`
+
+Se `CONTRIBUTING.md` för riktlinjer.
