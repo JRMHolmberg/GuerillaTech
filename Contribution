@@ -1,0 +1,47 @@
+# Contributing
+
+Tack för att du vill bidra till Guerilla Tech Lab!
+
+Det här projektet följer några enkla principer:
+
+1. **Människan först.**  
+   Verktyg ska göra det lättare för människor att förstå, besluta och agera – inte svårare.
+
+2. **Minsta effektiva verktyg.**  
+   Små, tydliga förändringar är bättre än stora, otydliga plattformar.
+
+3. **Tydliga valideringspunkter.**  
+   Varje ny funktion bör innehålla minst en tydlig "valideringspunkt":
+   - Vad ska vi kunna se har blivit bättre?
+   - Hur vet vi om det fungerar?
+
+4. **Skilj på modell och implementation.**  
+   Vi delar:
+   - datastrukturer (process, node, checkpoint, metric, ActionCard)
+   - format (JSON/YAML/Excel)
+   - exempel
+
+   Vi delar inte:
+   - personliga teorier/ekvationer
+   - kliniska eller känsliga data
+   - organisationsintern information
+
+## Hur du börjar
+
+1. Öppna en issue innan större förslag.
+2. Beskriv:
+   - vilket problem du vill lösa
+   - vilken nivå det främst rör: Heart, Mind, Body eller Reality
+   - hur du tänker validera att det du föreslår fungerar
+
+3. Skapa en pull request och länka till din issue.
+
+## Kodstil
+
+- Håll beroenden enkla och lätta att ersätta.
+- Lägg gärna till små exempel i `examples/` för att visa hur något används.
+- Undvik hårdkodade verksamhetsnamn (t.ex. sjukhus, företag, personer).
+
+## Licens
+
+Genom att bidra godkänner du att ditt bidrag licensieras under projektets licens (se `LICENSE`).
